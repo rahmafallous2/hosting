@@ -1,0 +1,405 @@
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2c5aa0;
+    --primary-dark: #1e3d6f;
+    --secondary-color: #ff6b6b;
+    --light-color: #f8f9fa;
+    --dark-color: #333;
+    --gray-color: #6c757d;
+    --light-gray: #e9ecef;
+    --border-radius: 8px;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+/* ===== HEADER STYLES ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header img {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+}
+
+header h6 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: var(--transition);
+}
+
+header ul li a:hover {
+    color: var(--primary-color);
+}
+
+header ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    bottom: 0;
+    left: 0;
+    transition: var(--transition);
+}
+
+header ul li a:hover::after {
+    width: 100%;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 5%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 85vh;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+    padding-right: 3rem;
+}
+
+.hero-text h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.hero-text h1 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+    font-weight: 800;
+}
+
+.hero-text h1::after {
+    content: '"';
+    color: var(--secondary-color);
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: var(--gray-color);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.hero > div:last-child {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.hero img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== BUTTON STYLES ===== */
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(44, 90, 160, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(44, 90, 160, 0.3);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+button:nth-of-type(2) {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: none;
+}
+
+button:nth-of-type(2):hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ===== ABOUT SECTION ===== */
+main > section:nth-of-type(2) {
+    display: flex;
+    align-items: center;
+    padding: 6rem 5%;
+    gap: 5rem;
+    background-color: white;
+}
+
+main > section:nth-of-type(2) > div:first-child {
+    flex: 1;
+}
+
+main > section:nth-of-type(2) > div:last-child {
+    flex: 1;
+}
+
+main > section:nth-of-type(2) img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+}
+
+main > section:nth-of-type(2) h6 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+main > section:nth-of-type(2) h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+    font-weight: 800;
+}
+
+main > section:nth-of-type(2) > div:last-child p {
+    font-size: 1.1rem;
+    color: var(--gray-color);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+/* ===== STATS STYLES ===== */
+main > section:nth-of-type(2) span {
+    display: inline-block;
+    margin-right: 3rem;
+    margin-bottom: 1.5rem;
+    vertical-align: top;
+}
+
+main > section:nth-of-type(2) span:first-of-type {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    display: block;
+}
+
+main > section:nth-of-type(2) span p {
+    font-size: 1rem;
+    color: var(--gray-color);
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+/* ===== DOWNLOAD CV BUTTON ===== */
+main > section:nth-of-type(2) button {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2.5rem;
+}
+
+main > section:nth-of-type(2) button h6 {
+    margin: 0;
+    color: white;
+    font-size: 1rem;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: underline;
+    margin-left: 1rem;
+}
+
+main > section:nth-of-type(2) button:hover h6 {
+    color: white;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--primary-dark);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 5%;
+    margin-top: 3rem;
+}
+
+footer p {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 4rem 5%;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+    
+    main > section:nth-of-type(2) {
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 5%;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 5%;
+        gap: 3rem;
+    }
+    
+    .hero-text {
+        padding-right: 0;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.4rem;
+    }
+    
+    main > section:nth-of-type(2) {
+        flex-direction: column;
+        padding: 4rem 5%;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    main > section:nth-of-type(2) span {
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header ul {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.3rem;
+    }
+    
+    main > section:nth-of-type(2) h2 {
+        font-size: 2rem;
+    }
+    
+    button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-text h2, .hero-text h1, .hero-text p, .hero-text button {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.hero-text h1 { animation-delay: 0.2s; }
+.hero-text p { animation-delay: 0.4s; }
+.hero-text button { animation-delay: 0.6s; }
